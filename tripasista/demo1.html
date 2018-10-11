@@ -56,34 +56,100 @@
     .swiper-button-prev {
       left: 30px;
     }
+    
+    .swiper-container-horizontal>.swiper-pagination-bullets {
+      top: 10px;
+      width: 100%;
+      position: absolute;
+      text-align: center;
+      
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center; /* flex-start */
+    }
+    
+    .swiper-container-horizontal>.swiper-pagination-secondary.swiper-pagination-bullets {
+      top: 20px;
+    }
+    
+    .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+      margin: 0 2px;
+      /* width: 8px; */
+      height: 3px;
+      /* display: inline-block; */
+      border-radius: 0; /* 100% */
+      background: #000;
+      opacity: .2;
+      
+      flex: 1 1 auto;
+    }
+    
+    .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet-active {
+      opacity: 1;
+      background: #007aff;
+    }
   </style>
 </head>
 <body>
   <!-- Swiper -->
-  <div class="swiper-container swiper-container-v">
+  <div class="swiper-container swiper-container-primary">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" data-history="slide1">Vertical Slide 1</div>
-      <div class="swiper-slide" data-history="slide2">
-        <div class="swiper-container swiper-container-h">
+      <div class="swiper-slide" data-history="slide1"><h1 class="entry-title">The Essential Solo Female Travel Guide (By Women)</h1></div>
+      <div class="swiper-slide" data-history="slide2"><div class="wp-block-cover-image has-background-dim alignfull" style="background-image:url(http://tripasista.highlights.fun/wp-content/uploads/sites/2/2018/10/experienced-solo-female-travel-guide-banner.jpg)"><p class="wp-block-cover-image-text">If you want to travel the world solo as an independent woman – this guide is for you.</p></div></div>
+      <div class="swiper-slide" data-history="slide3"><h2>1. Research is the secret!</h2></div>
+      <div class="swiper-slide" data-history="slide4"><ol><li>Go old school</li><li>Expand your network</li><li>Get in the mood</li></ol></div>
+      <div class="swiper-slide" data-history="slide5"><h2>2. Picking your destination</h2></div>
+      <div class="swiper-slide" data-history="slide6"><ol><li>Choose an entry point</li><li>Local customs</li><li>Plan your timing</li></ol></div>
+      <div class="swiper-slide" data-history="slide7"><h2>3. Time to fly (comfortably)</h2></div>
+      <div class="swiper-slide" data-history="slide8"><ol><li>Negotiate on price</li><li>Check-in time</li><li>Long haul, long recovery</li><li>Luggage regulations</li><li>Book your seat early</li><li>Order a special meal (and snacks)</li><li>Comfortable clothing and extras</li><li>Exercise and hydration</li></ol></div>
+      <div class="swiper-slide" data-history="slide9"><h2>4. The arrival</h2></div>
+      <div class="swiper-slide" data-history="slide10"><ol><li>Be flexible</li><li>Get your accommodation right</li><li>Travel warnings and scammers</li></ol></div>
+      <div class="swiper-slide" data-history="slide11"><h2>5. Safety for female travellers</h2></div>
+      <div class="swiper-slide" data-history="slide12"><ol><li>Keep connected</li><li>Get familiar</li><li>Tap into the power of women</li><li>Travel insurance (a good idea!)</li></ol></div>
+      <div class="swiper-slide" data-history="slide13"><h2>6. Managing your money</h2></div>
+      <div class="swiper-slide" data-history="slide14"><ol><li>Talk to your bank</li><li>Money and card usage tips</li></ol></div>
+      <div class="swiper-slide" data-history="slide15"><h2>7. Build a travel base (and why?)</h2></div>
+      <div class="swiper-slide" data-history="slide16"><h2>8. Hygiene pack list for female travellers</h2></div>
+      <div class="swiper-slide" data-history="slide17"><h2>9. Last minute travel checklist</h2></div>
+      <div class="swiper-slide" data-history="slide18">
+        <div class="swiper-container swiper-container-secondary">
           <div class="swiper-wrapper">
-            <div class="swiper-slide" data-history="slide2-1">Horizontal Slide 1</div>
-            <div class="swiper-slide" data-history="slide2-2">Horizontal Slide 2</div>
-            <div class="swiper-slide" data-history="slide2-3">Horizontal Slide 3</div>
-            <div class="swiper-slide" data-history="slide2-4">Horizontal Slide 4</div>
-            <div class="swiper-slide" data-history="slide2-5">Horizontal Slide 5</div>
+            <div class="swiper-slide" data-history="slide18-1">S1 Horizontal Slide 1</div>
+            <div class="swiper-slide" data-history="slide18-2">S1 Horizontal Slide 2</div>
+            <div class="swiper-slide" data-history="slide18-3">S1 Horizontal Slide 3</div>
+            <div class="swiper-slide" data-history="slide18-4">S1 Horizontal Slide 4</div>
+            <div class="swiper-slide" data-history="slide18-5">S1 Horizontal Slide 5</div>
           </div>
           <!-- Add Pagination -->
-          <div class="swiper-pagination swiper-pagination-h"></div>
+          <div class="swiper-pagination swiper-pagination-secondary"></div>
           <!-- Add Arrows -->
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next swiper-button-next-secondary"></div>
+          <div class="swiper-button-prev swiper-button-prev-secondary"></div>
         </div>
       </div>
-      <div class="swiper-slide" data-history="slide3">Vertical Slide 3</div>
-      <div class="swiper-slide" data-history="slide4">Vertical Slide 4</div>
+      <!-- <div class="swiper-slide" data-history="slide19">
+        <div class="swiper-container swiper-container-secondary">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" data-history="slide19-1">S2 Horizontal Slide 1</div>
+            <div class="swiper-slide" data-history="slide19-2">S2 Horizontal Slide 2</div>
+            <div class="swiper-slide" data-history="slide19-3">S2 Horizontal Slide 3</div>
+            <div class="swiper-slide" data-history="slide19-4">S2 Horizontal Slide 4</div>
+            <div class="swiper-slide" data-history="slide19-5">S2 Horizontal Slide 5</div>
+          </div> -->
+          <!-- Add Pagination -->
+          <!-- <div class="swiper-pagination swiper-pagination-secondary"></div> -->
+          <!-- Add Arrows -->
+          <!-- <div class="swiper-button-next swiper-button-next-secondary"></div>
+          <div class="swiper-button-prev swiper-button-prev-secondary"></div>
+        </div>
+      </div> -->
     </div>
     <!-- Add Pagination -->
-    <div class="swiper-pagination swiper-pagination-v"></div>
+    <div class="swiper-pagination swiper-pagination-primary"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next swiper-button-next-primary"></div>
+    <div class="swiper-button-prev swiper-button-prev-primary"></div>
   </div>
 
   <!-- Swiper JS -->
@@ -91,21 +157,25 @@
 
   <!-- Initialize Swiper -->
   <script>
-    var swiperH = new Swiper('.swiper-container-h', {
+    var swiperPrimary = new Swiper('.swiper-container-primary', {
       slidesPerView: 1,
       speed: 0,
+      mousewheel: true,
       spaceBetween: 0,
       keyboard: {
         enabled: true,
       },
       pagination: {
-        el: '.swiper-pagination-h',
+        el: '.swiper-pagination-primary',
         //type: 'progressbar',
         clickable: true,
+        // renderBullet: function (index, className) {
+        //   return '<span class="' + className + '">' + (index + 1) + '</span>';
+        // },
       },
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next-primary',
+        prevEl: '.swiper-button-prev-primary',
       },
       hashNavigation: {
         watchState: true,
@@ -114,19 +184,22 @@
       //   key: 'slide',
       // },
     });
-    var swiperV = new Swiper('.swiper-container-v', {
+    var swiperSecondary = new Swiper('.swiper-container-secondary', {
       slidesPerView: 1,
       speed: 0,
-      direction: 'vertical',
       mousewheel: true,
       spaceBetween: 0,
       keyboard: {
         enabled: true,
       },
       pagination: {
-        el: '.swiper-pagination-v',
+        el: '.swiper-pagination-secondary',
         //type: 'progressbar',
         clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next-secondary',
+        prevEl: '.swiper-button-prev-secondary',
       },
       hashNavigation: {
         watchState: true,
