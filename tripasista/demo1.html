@@ -15,7 +15,7 @@
       height: 100%;
     }
     body {
-      background: #eee;
+      background: #fff;
       font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
       font-size: 14px;
       color:#000;
@@ -32,6 +32,11 @@
       text-align: center;
       font-size: 18px;
       background: #fff;
+      overflow-y: auto;
+      
+      height: calc(100% - 100px);
+      padding-top: 20px;
+      padding-bottom: 80px;
 
       /* Center slide text vertically */
       display: -webkit-box;
@@ -47,19 +52,52 @@
       -webkit-align-items: center;
       align-items: center;
     }
-    .swiper-container-v {
-      background: #eee;
+    .swiper-slide > :first-child {
+      max-height: 100%;
     }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 30px;
+      height: 30px;
+      top: auto;
+      bottom: 20px !important;
+      background-color: #fff;
+      border: 10px solid #fff;
+      border-radius: 100%;
+      box-shadow: 0px 1px 5px #888;
+    }
+    
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      border-color: #fff;
+      background-color: #fff;
+      box-shadow: 0px 1px 8px #888;
+    }
+    
+    .swiper-button-next:active,
+    .swiper-button-prev:active {
+      border-color: #fff;
+      background-color: #fff;
+      box-shadow: 0px 1px 10px #888;
+    }
+    
     .swiper-button-next {
-      right: 30px;
+      right: 20px;
+      background-position: -2px -7px; 
     }
     .swiper-button-prev {
-      left: 30px;
+      left: 20px;
+      background-position: 4px -7px; 
     }
     
     .swiper-container-horizontal>.swiper-pagination-bullets {
       top: 10px;
+      height: 3px;
+      border-left: 8px solid transparent; 
+      border-right: 8px solid transparent; 
       width: 100%;
+      box-sizing: border-box;
       position: absolute;
       text-align: center;
       
@@ -78,7 +116,7 @@
       /* width: 8px; */
       height: 3px;
       /* display: inline-block; */
-      border-radius: 0; /* 100% */
+      border-radius: 3px; /* 100% */
       background: #000;
       opacity: .2;
       
@@ -112,7 +150,8 @@
       <div class="swiper-slide" data-history="slide15"><h2>7. Build a travel base (and why?)</h2></div>
       <div class="swiper-slide" data-history="slide16"><h2>8. Hygiene pack list for female travellers</h2></div>
       <div class="swiper-slide" data-history="slide17"><h2>9. Last minute travel checklist</h2></div>
-      <div class="swiper-slide" data-history="slide18">
+      
+      <!-- <div class="swiper-slide" data-history="slide18">
         <div class="swiper-container swiper-container-secondary">
           <div class="swiper-wrapper">
             <div class="swiper-slide" data-history="slide18-1">S1 Horizontal Slide 1</div>
@@ -121,13 +160,12 @@
             <div class="swiper-slide" data-history="slide18-4">S1 Horizontal Slide 4</div>
             <div class="swiper-slide" data-history="slide18-5">S1 Horizontal Slide 5</div>
           </div>
-          <!-- Add Pagination -->
           <div class="swiper-pagination swiper-pagination-secondary"></div>
-          <!-- Add Arrows -->
           <div class="swiper-button-next swiper-button-next-secondary"></div>
           <div class="swiper-button-prev swiper-button-prev-secondary"></div>
         </div>
-      </div>
+      </div> -->
+      
       <!-- <div class="swiper-slide" data-history="slide19">
         <div class="swiper-container swiper-container-secondary">
           <div class="swiper-wrapper">
@@ -162,6 +200,10 @@
       speed: 0,
       mousewheel: true,
       spaceBetween: 0,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
       keyboard: {
         enabled: true,
       },
@@ -184,30 +226,30 @@
       //   key: 'slide',
       // },
     });
-    var swiperSecondary = new Swiper('.swiper-container-secondary', {
-      slidesPerView: 1,
-      speed: 0,
-      mousewheel: true,
-      spaceBetween: 0,
-      keyboard: {
-        enabled: true,
-      },
-      pagination: {
-        el: '.swiper-pagination-secondary',
-        //type: 'progressbar',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next-secondary',
-        prevEl: '.swiper-button-prev-secondary',
-      },
-      hashNavigation: {
-        watchState: true,
-      },
-      // history: {
-      //   key: 'slide',
-      // },
-    });
+    // var swiperSecondary = new Swiper('.swiper-container-secondary', {
+    //   slidesPerView: 1,
+    //   speed: 0,
+    //   mousewheel: true,
+    //   spaceBetween: 0,
+    //   keyboard: {
+    //     enabled: true,
+    //   },
+    //   pagination: {
+    //     el: '.swiper-pagination-secondary',
+    //     //type: 'progressbar',
+    //     clickable: true,
+    //   },
+    //   navigation: {
+    //     nextEl: '.swiper-button-next-secondary',
+    //     prevEl: '.swiper-button-prev-secondary',
+    //   },
+    //   hashNavigation: {
+    //     watchState: true,
+    //   },
+    //   // history: {
+    //   //   key: 'slide',
+    //   // },
+    // });
   </script>
 </body>
 </html>
