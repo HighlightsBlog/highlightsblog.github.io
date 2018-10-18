@@ -63,8 +63,8 @@
       max-height: 100%;
     }
     
-    .swiper-button-next,
-    .swiper-button-prev {
+    .swiper-button-next-primary,
+    .swiper-button-prev-primary {
       width: 30px;
       height: 30px;
       top: auto;
@@ -75,25 +75,25 @@
       box-shadow: 0px 1px 5px rgba(0,0,0,0.5);
     }
     
-    .swiper-button-next:hover,
-    .swiper-button-prev:hover {
+    .swiper-button-next-primary:hover,
+    .swiper-button-prev-primary:hover {
       border-color: #fff;
       background-color: #fff;
       box-shadow: 0px 1px 8px rgba(0,0,0,0.5);
     }
     
-    .swiper-button-next:active,
-    .swiper-button-prev:active {
+    .swiper-button-next-primary:active,
+    .swiper-button-prev-primary:active {
       border-color: #fff;
       background-color: #fff;
       box-shadow: 0px 1px 10px rgba(0,0,0,0.5);
     }
     
-    .swiper-button-next {
+    .swiper-button-next-primary {
       right: 20px;
       background-position: -2px -7px; 
     }
-    .swiper-button-prev {
+    .swiper-button-prev-primary {
       left: 20px;
       background-position: 4px -7px; 
     }
@@ -149,18 +149,18 @@
 /* https://codepen.io/anon/pen/JmprOb */  
 #brand {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   justify-content: center;
   /* min-width: 40px; */
-  padding: 0;
-  height: 40px;
+  padding: 20px;
+  height: 30px;
   color: #fff; /*1D1F20*/
   font-weight: bold;
   font-family: 'Raleway';
-  font-size: 40px;
+  font-size: 30px;
   line-height: 1;
   text-decoration: none;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   /* text-shadow: 2px 2px 5px rgba(0,0,0,0.5); */
 }
 .brand-h {
@@ -184,7 +184,7 @@
   width: auto; */
 }
 .brand-ighlights {
-  display: inline-block; 
+  display: none; 
   opacity: 0.5;
   /* display: none;  */
   /* background-color: transparent;
@@ -193,9 +193,9 @@
   border-bottom-right-radius: 5px;
   padding-right: 5px; */
 }
-/* #brand:hover .brand-ighlights {
+#brand:hover .brand-ighlights {
   display: inline-block; 
-} */
+}
 .gradient-border {
   background: transparent;
   position: relative;
@@ -249,14 +249,14 @@
 </head>
 <body>
   <div id="header">
-    <a id="brand" class="gradient-border" href="#"><span class="brand-h">Hi</span><span class="brand-ighlights">GHLIGHTS</span></a>
+    <a id="brand" class="gradient-border" href="#"><span class="brand-h">Hi</span><span class="brand-ighlights">GHLIGHTS!</span></a>
     <!-- <div class="menu">...</div> -->
   </div>
   <!-- Swiper -->
   <div class="swiper-container swiper-container-primary">
     <div class="swiper-wrapper">
       <div class="swiper-slide" data-history="slide1"><h1>Hi.</h1></div>
-      <div class="swiper-slide" data-history="slide2"><h1>Chris Jacob.</h1></div>
+      <div class="swiper-slide" data-history="slide2"><h1>Chris <a onclick="alert('The handler!')" href="https://cats.com" target="_blank">Jacob</a>.</h1></div>
       <div class="swiper-slide" data-history="slide3"><h1>Software Developer, Product Owner & Startup Bootstrapper.</h1></div>
       <div class="swiper-slide" data-history="slide4"><h1>Disrupt social media marketing.</h1></div>
       <div class="swiper-slide" data-history="slide5"><h1>Highlights.</h1></div>
@@ -319,13 +319,18 @@
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination swiper-pagination-primary"></div>
-    <!-- Add Arrows -->
-    <div class="swiper-button-next swiper-button-next-primary"></div>
-    <div class="swiper-button-prev swiper-button-prev-primary"></div>
+    
+    <!-- <div class="swiper-button-next swiper-button-next-screen"></div>
+    <div class="swiper-button-prev swiper-button-prev-screen"></div> -->
   </div>
+  
+  <!-- Add Arrows -->
+  <div class="swiper-button-next swiper-button-next-primary"></div>
+  <div class="swiper-button-prev swiper-button-prev-primary"></div>
 
   <!-- Swiper JS -->
   <script src="../dist/js/swiper.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
   <!-- Initialize Swiper -->
   <script>
@@ -350,8 +355,8 @@
         // },
       },
       navigation: {
-        nextEl: '.swiper-button-next-primary',
-        prevEl: '.swiper-button-prev-primary',
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
       hashNavigation: {
         watchState: true,
@@ -360,6 +365,38 @@
       //   key: 'slide',
       // },
     });
+    
+    swiperPrimary.on('tap', function() {
+      if(this && this.touches && this.touches.startX && this.touches.startX < 90) {
+        swiperPrimary.slidePrev(0, true);
+      } else {
+        swiperPrimary.slideNext(0, true);
+      }
+    });
+    
+    // $( document ).ready(function() {
+    //   $('.swiper-button-next').on('click', function(e){
+    //     console.log('yes');
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //   });
+    // 
+    //   // console.log('foo');
+    //   // $('.swiper-button-next-screen').click(function (e) 
+    //   // {
+    //   //   console.log('bar');
+    //   //   $('.swiper-button-next-screen').hide();
+    //   //   $(document.elementFromPoint(e.clientX, e.clientY)).trigger("click");
+    //   //   console.log($(document.elementFromPoint(e.clientX, e.clientY)));
+    //   //   $('.swiper-button-next-screen').show();
+    //   // }); 
+    // });
+    
+// for(let elem of document.querySelectorAll('*')) {
+//   elem.addEventListener("click", e => alert(`Capturing: ${elem.tagName}`), true);
+//   elem.addEventListener("click", e => alert(`Bubbling: ${elem.tagName}`));
+// }
+    
     // var swiperSecondary = new Swiper('.swiper-container-secondary', {
     //   slidesPerView: 1,
     //   speed: 0,
@@ -384,6 +421,19 @@
     //   //   key: 'slide',
     //   // },
     // });
+    
+    // $( document ).ready(function() {
+    //   console.log('foo');
+    //   $('.swiper-button-next-screen').click(function (e) 
+    //   {
+    //     console.log('bar');
+    //     $('.swiper-button-next-screen').hide();
+    //     $(document.elementFromPoint(e.clientX, e.clientY)).trigger("click");
+    //     console.log($(document.elementFromPoint(e.clientX, e.clientY)));
+    //     $('.swiper-button-next-screen').show();
+    //   }); 
+    // });
+
   </script>
 </body>
 </html>
