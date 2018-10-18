@@ -259,7 +259,7 @@
   <div class="swiper-container swiper-container-primary">
     <div class="swiper-wrapper">
       <div class="swiper-slide" data-history="slide1"><h1>Hi.</h1></div>
-      <div class="swiper-slide" data-history="slide2"><h1>Chris <a onclick="alert('The handler!')" href="https://cats.com" target="_blank">Jacob</a>.</h1></div>
+      <div class="swiper-slide" data-history="slide2"><h1>Chris <a onclick="alert('The handler!!!')" href="https://cats.com" target="_blank">Jacob</a>.</h1></div>
       <div class="swiper-slide" data-history="slide3"><h1>Software Developer, Product Owner & Startup Bootstrapper.</h1></div>
       <div class="swiper-slide" data-history="slide4"><h1>Disrupt social media marketing.</h1></div>
       <div class="swiper-slide" data-history="slide5"><h1>Highlights.</h1></div>
@@ -369,7 +369,7 @@
       // },
     });
     
-    swiperPrimary.on('tap', function() {
+    swiperPrimary.on('click', function() {
       if(this && this.touches && this.touches.startX && this.touches.startX < 90) {
         swiperPrimary.slidePrev(0, true);
       } else {
